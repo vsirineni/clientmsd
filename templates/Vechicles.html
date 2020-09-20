@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Vechicles Details{% endblock title %}
+
+{% block content %}
+     <div class="content container">
+          <div class="row" id="events_card">
+                {% for vechicle in vec %}
+                    <div class="col-md-16"></div>
+                    <div class="col-md-5">
+                         <div class="card text-white bg-dark mb-3">
+                              <div class="card-body">
+                                   <h5 class="card-title" style = "color:lightblue" >Client Name : {{ vechicle.client }}</h5>
+                                   <strong style = "color:yellow">CarModel: </strong><b class="card-text" style = "color:#f3f7cc">{{vechicle.carmodel}}</b><br>
+                                   <strong style = "color:yellow">VINnumber: </strong><b class="card-text" style = "color:#f3f7cc">{{vechicle.VINnumber}}</b><br>
+                                   <strong style = "color:yellow">Date of Purchase: </strong><b class="card-text" style = "color:#f3f7cc">{{vechicle.PurchaseDate}}</b><br>
+                                   <strong style = "color:yellow">Last Service Date: </strong><b class="card-text" style = "color:#f3f7cc">{{vechicle.LastServiceDate}}</b><br>
+                              </div>
+                         </div>
+                    </div>
+               {% endfor %}
+          </div>
+     </div>
+{% endblock content %}
