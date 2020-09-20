@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+body {
+  color: grey;
+}
+</style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,
@@ -11,7 +16,10 @@
 
     <name>{% block name %}CMS App{% endblock name %}</name>
   </head>
+
   <body>
+
+
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <a class="navbar-brand" href="{% url 'home' %}">Client Management System</a>
       {% if user.is_authenticated %}
