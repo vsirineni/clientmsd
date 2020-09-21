@@ -51,12 +51,16 @@ def comment(request,pk):
         cform = CommentForm(request.POST)
         if cform.is_valid():
             comment = cform.save(commit=False)
+
             comment.client = post
+            print(comment)
+
             comment.author=request.user
             comment.comment = comment.comment
             comment.save()
+            print(comment)
             print(comment.client)
-            messages.success(request, f'Your comment has been updated')
+            messages.success(request, 'Your comment has been updated')
             return redirect('client_detail', pk=post.pk)
     else:
         cform = CommentForm()

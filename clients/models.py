@@ -36,7 +36,7 @@ class Comment(models.Model):
     author = models.ForeignKey(get_user_model(),on_delete=models.CASCADE,)
 
     def __str__(self):
-        return 'Comment by {}'.format(self.author)
+        return self.comment
 
     def get_absolute_url(self):
         return reverse('Client_list')
